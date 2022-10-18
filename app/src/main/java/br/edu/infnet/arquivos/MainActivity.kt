@@ -1,6 +1,7 @@
 package br.edu.infnet.arquivos
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -57,6 +58,10 @@ class MainActivity : AppCompatActivity() {
         //     val conteudo = binding.inputConteudo.text.toString()
         //     salvarArquivo(titulo, conteudo)
         // }
+
+        binding.floatingActionButton.setOnClickListener{
+            startActivity(Intent(this, PrefsActivity::class.java))
+        }
 
     }
 
