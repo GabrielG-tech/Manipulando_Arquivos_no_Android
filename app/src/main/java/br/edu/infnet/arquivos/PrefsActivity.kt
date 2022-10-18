@@ -14,7 +14,23 @@ class PrefsActivity : AppCompatActivity() {
         binding = ActivityPrefsBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        setup()
     }
+
+    private fun setup() {
+        binding.inputLogin.setText(getLogin())
+        setupClickListeners()
+    }
+
+    private fun setupClickListeners() {
+        binding.btnGravarPrefs.setOnClickListener {
+            saveLogin(
+                binding.inputLogin.text.toString()
+            )
+        }
+    }
+
 
     fun getPrefs(): SharedPreferences {
         return getSharedPreferences(
